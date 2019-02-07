@@ -123,7 +123,7 @@ def get_info(path, known_type=''):
         type = 'l'
     else:
         type = 'f'
-    return(type, oct(mode)[2:], owner, group, src, dst)
+    return(type, oct(mode)[2:], owner, group, dst, src)
 
 while len(paths):
     path = paths.pop()
