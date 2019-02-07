@@ -128,8 +128,8 @@ def get_info(path, known_type=''):
 while len(paths):
     path = paths.pop()
     for root, dirs, files in os.walk(path):
-        print("%s %s %s %s %s %s" % get_info(root, known_type='d'))
+        print("%s %s %s %s \"%s\" \"%s\"" % get_info(root, known_type='d'))
         for file in files:
             fpath = root + '/' + file
-            print("%s %s %s %s %s %s" % get_info(fpath))
+            print("%s %s %s %s \"%s\" \"%s\"" % get_info(fpath))
 
