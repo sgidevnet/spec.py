@@ -165,6 +165,7 @@ if run_epm:
         err("more than one tardist found?")
     shutil.copy(tardist[0], '.')
     if echo_tardist:
-        print(tardist[0])
+        # sorry :D
+        print(os.path.abspath(os.path.basename(tardist[0])))
     debug("clean up %s" % workdir)
     shutil.rmtree(workdir)
