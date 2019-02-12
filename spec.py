@@ -47,7 +47,7 @@ symlinks = []
 echo_tardist = False
 
 try:
-    opts, args = getopt.getopt(sys.argv[1:], "u:g:d:h:p:tv", ["help", "output="])
+    opts, args = getopt.getopt(sys.argv[1:], "u:g:d:h:p:tve")
 except getopt.GetoptError as getopt_err:
     # print help information and exit:
     err(getopt_err)  # will print something like "option -a not recognized"
@@ -69,7 +69,7 @@ for o, a in opts:
     elif o == '-v':
         verbose = True
     elif o == '-e':
-        echo_tardist = False
+        echo_tardist = True
 
 paths = args
 
@@ -165,6 +165,6 @@ if run_epm:
         err("more than one tardist found?")
     shutil.copy(tardist[0], '.')
     if echo_tardist:
-        print(tardist)
+        print(tardist[0])
     debug("clean up %s" % workdir)
     shutil.rmtree(workdir)
